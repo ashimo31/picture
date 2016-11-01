@@ -1,10 +1,14 @@
 class PhotosController < ApplicationController
 
+before_action :configure_permitted_parameters, if: :devise_controller?
+protect_from_forgery with: :exception
+
 before_action :authenticate_user!
 before_action :set_photo, only: [:edit, :update, :destroy]
 
   def index
     @photos = Photo.all
+    #raise
   end
 
   def new
@@ -21,14 +25,16 @@ before_action :set_photo, only: [:edit, :update, :destroy]
   end
 
   def create
-       ＠photo=Photo.create(photos_params)
+       @photo=Photo.new(photos_params)
        @photo.user_id = current_user.id
     if @photo.save
       redirect_to photos_path, notice: "投稿しました！"
+      NoticeMailer.sendmail_photo(@photo).deliver
     else
       render action: 'new'
     end
   end
+
 
   def edit
   end
@@ -43,6 +49,24 @@ before_action :set_photo, only: [:edit, :update, :destroy]
     redirect_to photos_path, notice: "削除しました！"
 
   end
+
+
+  PERMISSIBLE_ATTRIBUTES = %i(photo avatar avatar_cache)
+
+    private
+
+      def configure_permitted_parameters
+        devise_parameter_sanitizer.permit(:save, keys: PERMISSIBLE_ATTRIBUTES)
+      end
+
+
+
+
+
+
+
+
+
 
   private
     def photos_params

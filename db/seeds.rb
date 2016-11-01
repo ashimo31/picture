@@ -5,16 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-100.times do |n|
-  email = Faker::Internet.email
-  password = "password"
-  User.create!(email: email,
-               password: password,
-               password_confirmation: password,
-               )
-
-
-  file=Faker::File.file_name('path/to') #=> "path/to/something_random.jpg"
-
-
-end
+#
+#
+#  file=Faker::File.file_name('path/to') #=> "path/to/something_random.jpg"
+<% @photos.each do |photo| %>
+Photo.create(
+  title: "a",
+  content: "a",
+  image: File.open(
+["#{Rails.root}/db/fixtures/image-1.jpg","#{Rails.root}/db/fixtures/image-2.jpg","#{Rails.root}/db/fixtures/image-3.jpg","#{Rails.root}/db/fixtures/image-4.jpg","#{Rails.root}/db/fixtures/image-5.jpg"].sample))
+  <% end %>

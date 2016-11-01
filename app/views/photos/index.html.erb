@@ -1,17 +1,17 @@
 
-<div class="container">
+  <div class="container">
   <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
     <p><%= notice %></p>
     <h1>写真一覧</h1>
       <%= link_to "写真を投稿する", new_photo_path, class: 'btn btn-default' %>
-    <% @photos.each do |blog| %>
-    <div class="row">
-    
-
-
-      <%= link_to "編集", edit_photo_path(blog.id), class: 'btn btn-default btn-sm btn-success' %>
-      <%= link_to "削除", photo_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
-    </div>
+    <% @photos.each do |photo| %>
+      <p><%= photo.title %></p>
+      <p><%= photo.content %></p>
+      <p><%= image_tag(photo.image_url) %></p>
+      <div class="row">
+        <%= link_to "編集", edit_photo_path(photo.id), class: 'btn btn-default btn-sm btn-success' %>
+        <%= link_to "削除", photo_path(photo.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
+      </div>
     <% end %>
   </div>
 </div>

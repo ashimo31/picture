@@ -52,3 +52,27 @@ gem 'faker'
 #image uploader
 gem 'carrierwave'
 gem 'rmagick'
+
+gem 'rails_12factor', group: :production
+
+group :development do
+  gem 'letter_opener_web'
+end
+
+group :development do
+  gem 'dotenv-rails'
+end
+
+
+
+gem 'therubyracer', platforms: :ruby
+gem 'rails_admin'
+
+gem 'cancan'
+
+gem 'pry-rails'
+gem 'better_errors'
+
+gem  'omniauth', '~> 1.0.0'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
