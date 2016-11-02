@@ -5,6 +5,7 @@
     <h1>写真一覧</h1>
       <%= link_to "写真を投稿する", new_photo_path, class: 'btn btn-default' %>
     <% @photos.each do |photo| %>
+      <p><%= current_user.name %></p>
       <p><%= photo.title %></p>
       <p><%= photo.content %></p>
       <p><%= image_tag(photo.image_url) %></p>
