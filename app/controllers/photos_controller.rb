@@ -37,6 +37,7 @@ before_action :set_photo, only: [:edit, :update, :destroy]
 
 
   def edit
+    @photo = Photo.find(params[:id])
   end
 
   def update
