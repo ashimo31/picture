@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 header {
   width: 100%;
-  background-color: #2c3e50;
+  background-color: green;
   height: 54px;
 }
 
@@ -20,7 +20,7 @@ header ul a {
 }
 
 header li {
-  float: left;
+  float: right;
   width: auto;
 }
 
@@ -31,22 +31,22 @@ header ul:after {
 }
 
 .main-header {
-  padding-bottom: 15%;
+  padding-bottom: 0%;
   width: 100%;
-  background-size: cover;
-  background-image: url("header.jpg");
+  background-size: auto auto;
+  background-image: url("image2.jpg");
   background-attachment: fixed;
 }
 
 .main-header img {
   display: block;
   margin: 0 auto;
-  width: 25%;
-  padding-top: 15%;
+  width: 75%;
+  padding-top: 0%;
 }
 
 .about {
-  background-color: white;
+  background-color: #99cc00;
   color: #333;
   padding: 80px;
 }
@@ -56,6 +56,10 @@ header ul:after {
   padding: 80px;
   padding-bottom: 185px;
 }
+
+body { color: black;
+	background-color: transparent }
+
 
 footer {
   width: 100%;
