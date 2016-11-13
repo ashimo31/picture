@@ -1,15 +1,18 @@
 <!doctype html>
+<html lang="ja">
 
 <section class="main-header">
+
+  <br>
   <h1>Welcome to Ponstagram!</h1>
-  <img src="<%= asset_path "image2.png" %>">
+
+
+  <div class="col-md-6 col-md-offset-3">
+    <% @photos.each do |photo| %>
+      <p><%= photo.title %></p>
+      <p><%= photo.content %></p>
+      <p><%= image_tag(photo.image_url) %></p>
+    <% end %>
+    </div>
+
 </section>
-
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <title>Ponstagram</title>
-
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="normalize.css">
-</head>

@@ -34,9 +34,6 @@ header ul:after {
 .main-header {
   padding-bottom: 115%;
   width: 100%;
-  background-size: cover;
-  background-image: url("images-master/image2-1.jpg");
-  background-attachment: fixed;
 }
 
 .main-header img {
@@ -69,6 +66,14 @@ header ul:after {
   display: table-cell;
   width: 100%;
 }
+
+.wrapper {
+  margin: 0px auto 74px;
+  padding: 20px 20px 20px 35px;
+  width: 70%
+}
+
+
 
 footer {
   width: 100%;
